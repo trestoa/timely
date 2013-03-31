@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+ padding:60px; 
+}
+
+/* Navbar */
+.nav-form{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	min-width:250px;
+}
+.nav-form .control-group{
+	margin-bottom: 0px;
+}
+
+/* Header */
+header{
+	margin:80px 0;
+	text-align:center;
+}
+header h1{
+	font-size:100px;
+	line-height:1;
+}
+header p{
+	font-size:24px;
+	line-height:1.25;
+}
+footer{
+	
+}
+
+/* content */
