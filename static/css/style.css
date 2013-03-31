@@ -28,8 +28,26 @@ header p{
 	font-size:24px;
 	line-height:1.25;
 }
+
+/* footer */
 footer{
-	
+	max-width:450px;
+	border-radius:5px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:100px;
+	margin-bottom:20px;
+	padding:40px;
+	text-align:center;
+	background-color:#333;
+	color:#DDD;
+}
+footer a{
+	color: rgb(255, 255, 255);
+	text-decoration:none;
 }
 
-/* content */
+footer a:hover{
+	color: rgb(255, 255, 255);
+	text-decoration:none;
+}
