@@ -3,6 +3,10 @@
 body{
  padding:60px; 
 }
+php-alert{
+	position:absolute;
+	top:100px;
+}
 
 /* Navbar */
 .nav-form{

@@ -1,8 +1,6 @@
 <?php
-function print_error($message){
-	$title = 'Calender';
-	$tmpl_navbar = 'default_navbar.php';
-	$tmpl_content = 'default_content.php';
+function alert_error($message){
+	setTamplate();
 	include('../template/header.php');
 	include('./template/' . $tmpl_content);
 	echo '<div class="alert php-alert">
@@ -10,5 +8,13 @@ function print_error($message){
 		. $message
 		. '</div>';
 	include('./template/footer.php');
+}
+
+function setTemplate(){
+	if(!isset($_SESSION['logged_in'])){
+		$title = 'Calender';
+		$tmpl_navbar = 'default_navbar.php';
+		$tmpl_content = 'default_content.php';
+	}
 }
 ?>
