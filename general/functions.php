@@ -8,6 +8,7 @@ function alert_error($message){
 		. $message
 		. '</div>';
 	include('./template/footer.php');
+	exit();
 }
 
 function setTemplate(){
