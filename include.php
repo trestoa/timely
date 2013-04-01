@@ -1,4 +1,4 @@
 <?php
 session_start();
-//include("mysql_connect.php");
+include("./general/mysql_connect.php");
 ?>
