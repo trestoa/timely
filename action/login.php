@@ -2,11 +2,11 @@
 //global include
 include('../include.php');
 if(!isset($_POST['username']) && !isset($_POST['password'])){
-	alert_error('Invalid login data!');
+	error_alert('Invalid login data!');
 }
 else{
 	if($_SESSION['logged_in']){
-		alert_error('You are already logged in!');
+		error_alert('You are already logged in!');
 	}
 	$query = "SELECT username, ID"
 		. " FROM user";

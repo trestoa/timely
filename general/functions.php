@@ -1,5 +1,5 @@
 <?php
-function alert_error($message){
+function error_alert($message){
 	set_template();
 	include('../template/header.php');
 	include('./template/' . $tmpl_content);

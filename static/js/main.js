@@ -1,7 +1,7 @@
 function check_signup(){
-	var username = $('#signin-username').val();
-	var password = $('#signin-password').val();
-	var repassword = $('#signin-repassword').val();
+	var username = $('#signup-username').val();
+	var password = $('#signup-password').val();
+	var repassword = $('#signup-repassword').val();
 	var username_regex = /^\w{5,30}$/;
 	var password_regex = /^(?=.*\w)(?=.*\W).{5,30}$/;
 	if(!username.match(username_regex)){
