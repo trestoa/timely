@@ -1,6 +1,6 @@
 <?php
 function alert_error($message){
-	setTamplate();
+	set_template();
 	include('../template/header.php');
 	include('./template/' . $tmpl_content);
 	echo '<div class="alert php-alert">
@@ -11,7 +11,8 @@ function alert_error($message){
 	exit();
 }
 
-function setTemplate(){
+function set_template(){
+	global $title, $tmpl_navbar, $tmpl_content;
 	if(!isset($_SESSION['logged_in'])){
 		$title = 'Calender';
 		$tmpl_navbar = 'default_navbar.php';
