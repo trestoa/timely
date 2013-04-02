@@ -17,5 +17,10 @@ function setTemplate(){
 		$tmpl_navbar = 'default_navbar.php';
 		$tmpl_content = 'default_content.php';
 	}
+	else{
+		$title = 'Calender | ' . $_SESSION['username'];
+		$tmpl_navbar = 'logged_in_navbar.php';
+		$tmpl_content = 'view_calender.php';
+	}
 }
 ?>

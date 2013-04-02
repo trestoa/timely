@@ -35,7 +35,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-                <form class="nav-form" action="./action/signup.php" method="post">
+                <form class="nav-form" action="./action/signup.php" method="post" onSubmit="return check_signin()">
                     <div class="control-group">
                         <label class="control-label" for="signup-username">Username</label>
                         <div class="controls">
@@ -51,7 +51,7 @@
                     <div class="control-group">
                         <label class="control-label" for="signup-repassword">Retype Password</label>
                         <div class="controls">
-                            <input type="password" class="input-block-level" id="signup-repassword" name="repassword" placeholder="Password">
+                            <input type="password" class="input-block-level" id="signup-repassword" placeholder="Password">
                         </div>
                     </div>
                     <div class="control-group">
