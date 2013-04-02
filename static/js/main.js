@@ -1,4 +1,4 @@
-function check_signin(){
+function check_signup(){
 	var username = $('#signin-username').val();
 	var password = $('#signin-password').val();
 	var repassword = $('#signin-repassword').val();

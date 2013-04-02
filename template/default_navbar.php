@@ -35,7 +35,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-                <form class="nav-form" action="./action/signup.php" method="post" onSubmit="return check_signin()">
+                <form class="nav-form" action="./action/signup.php" method="post" onSubmit="return check_signup()">
                     <div class="control-group">
                         <label class="control-label" for="signup-username">Username</label>
                         <div class="controls">
