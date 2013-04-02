@@ -27,7 +27,7 @@ else{
 		$query = "INSERT INTO user"
 			. " (username, email, password)"
 			. " VALUES"
-			. " ('". $_POST['username'] . "', '" . $_POST['email'] . "', '" . $_POST['password'] . ")";
+			. " ('". $_POST['username'] . "', '" . $_POST['email'] . "', '" . sha1($_POST['password']) . ")";
 		$create_user = mysql_query($query);
 		if(!$create_user){
 			die("Database error: " . mysql_error());
