@@ -3,11 +3,11 @@
 include('../include.php');
 //Check if the user is already logged in
 if($_SESSION['logged_in']){
-	error_alert("Your are already logged in! Is not one account enough for you?");
+	alert("Your are already logged in!");
 }
 else{
 	if(!isset($_POST['username']) && !isset($_POST['password']) && !isset($_POST['repassword']) && !isset($_POST['email'])){
-		error_alert('Invaild login data!');
+		alert('Invaild login data!');
 	}
 	else{
 		//Look if the choosen username exists
@@ -20,7 +20,7 @@ else{
 		if(mysql_num_rows($check_username)){
 			while($row = mysql_fetch_assoc($check_username)){
 				if($row['username'] == $_POST['username']){
-					error_alert("The username you choose is already taken!");
+					alert("The username you choose is already taken!");
 				}
 			}
 		}

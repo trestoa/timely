@@ -5,8 +5,8 @@
             <p>made with &hearts;</p>
         </footer>
         <script src="http://code.jquery.com/jquery.js"></script>
-		<script src="./static/js/bootstrap.min.js"></script>
-        <script src="./static/js/ajax.js"></script>
-        <script src="./static/js/main.js"></script>
+		<script src="<?php echo MAIN_URL . '/static/js/bootstrap.min.js' ?>"></script>
+        <script src="<?php echo MAIN_URL . '/static/js/ajax.jss' ?>"></script>
+        <script src="<?php echo MAIN_URL . '/static/js/main.js' ?>"></script>
     </body>
 </html>

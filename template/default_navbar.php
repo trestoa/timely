@@ -6,7 +6,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-                <form class="nav-form" action="./action/login.php" method="post">
+                <form class="nav-form" action="<?php echo MAIN_URL . '/action/login.php' ?>" method="post">
                     <div class="control-group">
                         <label class="control-label" for="login-username">Username</label>
                         <div class="controls">
@@ -35,7 +35,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-                <form class="nav-form" action="./action/signup.php" method="post" onSubmit="return check_signup()">
+                <form class="nav-form" action="<?php echo MAIN_URL . '/action/signup.php' ?>" method="post" onSubmit="return check_signup()">
                     <div class="control-group">
                         <label class="control-label" for="signup-username">Username</label>
                         <div class="controls">

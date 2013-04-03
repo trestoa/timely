@@ -2,11 +2,11 @@
 //global include
 include('../include.php');
 if(!isset($_POST['username']) && !isset($_POST['password'])){
-	error_alert('Invalid login data!');
+	alert('Invalid login data!');
 }
 else{
 	if($_SESSION['logged_in']){
-		error_alert('You are already logged in!');
+		alert('You are already logged in!');
 	}
 	$query = "SELECT username, ID"
 		. " FROM user";
@@ -38,13 +38,13 @@ else{
 					header('Location: ../index.php');
 				}
 				else{
-					error_alert("You have entered a wrong password!");
+					alert("You have entered a wrong password!");
 				}
 			}
 		}	
 	}
 	else{
-		error_alert('This username does not exist!');
+		alert('This username does not exist!');
 	}
 	
 	
