@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="signup-email">Password</label>
+                        <label class="control-label" for="signup-email">Email</label>
                         <div class="controls">
                             <input type="email" class="input-block-level" id="signup-email" name="email" placeholder="Email">
                         </div>

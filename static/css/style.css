@@ -3,8 +3,8 @@
 body{
  padding:60px; 
 }
-php-alert{
-	position:absolute;
+alert{
+	position:static;
 	top:100px;
 }
 

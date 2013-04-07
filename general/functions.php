@@ -2,11 +2,11 @@
 function alert($message){
 	set_template();
 	include('../template/header.php');
-	include('../template/' . $GLOABLS['tmpl_content']);
 	echo '<div class="alert php-alert">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>'
 		. $message
 		. '</div>';
+	include('../template/' . $GLOBALS['tmpl_content']);
 	include('../template/footer.php');
 	exit();
 }

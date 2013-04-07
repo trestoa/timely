@@ -1,7 +1,4 @@
 <ul class="nav pull-right">
-	<li>
-    	<p><p class="navbar-text">You are logged in as </p>
-    </li>
     <li class="dropdown">
     	<a href="#" class="dropdown-toogle" data-toggle="dropdown">
 			<?php echo $_SESSION['username']?>

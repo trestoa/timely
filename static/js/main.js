@@ -4,9 +4,9 @@ function check_signup(){
 	var repassword = $('#signup-repassword').val();
 	var email = $('#signup-email').val();
 	var username_regex = /^\w{5,30}$/;
-	var password_regex = /^(?=.*\w)(?=.*\W).{5,30}$/;
 	var email_regex = /^.{5,50}$/;
 	if(!username.match(username_regex)){
+	var password_regex = /^(?=.*\w)(?=.*\W).{5,30}$/;
 		alert("Your username must fit the following conditions:\n5-30 alphanumeric letters\nor for nerds: /^\\w{5,30}$/");
 		return false;
 	}
