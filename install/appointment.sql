@@ -1,5 +1,9 @@
 ﻿CREATE TABLE IF NOT EXISTS 'calender_appointment' (
-	'user_ID' int(10) NOT NULL;
-	'dp_date' date NOT NULL default '0000-00-00',
-	'content' varchar(200) NOT NULL,
+	`id` int(10) NOT NULL AUTO_INCREMENT,
+	`user_ID` int(10) NOT NULL;
+	`date_day` int(1) NOT NULL default 0,
+	`date_month` int(1) NOT NULL default 0,
+	`date_year` year NOT NULL default '0000',
+	`content` varchar(200) NOT NULL,
+	PRIMARY KEY('ID')
 );
