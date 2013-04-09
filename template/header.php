@@ -7,8 +7,10 @@
 <link href="<?php echo MAIN_URL . '/static/css/bootstrap.min.css' ?>" rel="stylesheet" media="screen">
 <link rel="stylesheet" href="<?php echo MAIN_URL . '/static/css/style.css' ?>">
 </head>
-
 <body>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="<?php echo MAIN_URL . '/static/js/bootstrap.min.js' ?>"></script>
+<script src="<?php echo MAIN_URL . '/static/js/main.js' ?>"></script>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner">
 <div class="container">
@@ -16,4 +18,6 @@
 <?php include($GLOBALS['tmpl_navbar']) ?>
 </div>
 </div>
+</div>
+<div id="javascript-alert-area">
 </div> 

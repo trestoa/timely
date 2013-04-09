@@ -1,8 +1,9 @@
 <?php
 include('../include.php');
-//if the user is not logged in, redirect them to index and print an error
+//if the user is not logged in return error
 if($_SESSION['logged_in'] = false){
-	alert("You are not logged in. Please log in first.");
+	echo('error');
+	exit();
 }
 ?>
 
@@ -13,7 +14,7 @@ if($_SESSION['logged_in'] = false){
   <th>Tuesday</th>
   <th>Wednesday</th>
   <th>Thursday</th>
-  <th>Friday></th>
+  <th>Friday</th>
   <th>Saturday</th>
 </tr>
 

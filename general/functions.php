@@ -20,7 +20,7 @@ function set_template(){
 	else{
 		$GLOBALS['title'] = 'Calender | ' . $_SESSION['username'];
 		$GLOBALS['tmpl_navbar'] = 'logged_in_navbar.php';
-		$GLOBALS['tmpl_content'] = 'view_calender.php';
+		$GLOBALS['tmpl_content'] = 'render_calender.php';
 	}
 }
 ?>
