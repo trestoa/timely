@@ -32,7 +32,15 @@ header p{
 	font-size:24px;
 	line-height:1.25;
 }
-
+/* content */
+.appointment{
+	width:100px;
+}
+.appointment textarea{
+	resize: none;
+	width:90%;
+	height:100%;
+}
 /* footer */
 footer{
 	max-width:450px;

@@ -63,10 +63,10 @@ while($day <= ceil($daysInMonth/7)*7){
 		echo('<tr>');
 	}
 	if($day <= $first_day || $day - $first_day > $daysInMonth){
-		echo('<td class="calender-inactive"></td>');
+		echo ('<td class="calender-inactive"></td>');
 	}
 	else{
-		echo('<td><textarea>');
+		echo('<td class="appointment"><textarea>');
 		if(isset($appointments[$day])){
 			echo($appointments[$day]);
 		}
