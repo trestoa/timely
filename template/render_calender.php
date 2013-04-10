@@ -1,4 +1,3 @@
-<div class="calender-content container">
 <?php
 //include_once('../include.php');
 //if the user is not logged in return error
@@ -12,7 +11,7 @@ if(isset($_GET['day']) && isset($_GET['month']) && isset($_GET['year'])){
 }
 //if the script is called from the server, render the default calender
 else{
-	echo('<script type="text/javascript" src="' . MAIN_URL . '/static/js/view_calender.js"></script>');
+	echo('<div class="calender-content container">');
 	if(isset($_SESSION['last_date'])){
 		
 	}
@@ -24,6 +23,22 @@ else{
 	}
 }
 ?>
+<div class="div-center">
+	<h2 id="year"><?php echo $year ?></h2>
+</div>
+<div class="pagination pagination-centered pagination-small">
+	<ul>
+    	<li><a href="#" id="prev">&laquo;</a></li>
+    	<?php
+		$months = array("January","February","March","April","May","June","July","August","September","October","November","December");
+		echo '<li>';
+		for($i = 0; $i < 12; $i++){
+			echo '<li' . ($i == $month+1 ? 'class="active"' : '') . '><a href="#" id="month-pagination" onclick="">' . $months[$i] . '</a></li>';
+		}
+		?>
+        <li><a href="#" id="next">&raquo;</a></li>
+    </ul>
+</div>
 
 <table class="table table-bordered">
 <tr>
@@ -66,11 +81,11 @@ while($day <= ceil($daysInMonth/7)*7){
 		echo ('<td class="calender-inactive"></td>');
 	}
 	else{
-		echo('<td class="appointment"><textarea>');
+		echo('<td class="appointment"><textarea readonly>');
 		if(isset($appointments[$day])){
 			echo($appointments[$day]);
 		}
-		echo('</textarea></td>');
+		echo('</textarea><input type="hidden" class="calender-day" value="' . $day . '"></td>');
 	}
 	if($day % 7 == 0){
 		echo('</tr>');
@@ -78,6 +93,7 @@ while($day <= ceil($daysInMonth/7)*7){
 	$day++;
 }
 ?>
-
+<input type="hidden" id="calender-month" value="<?php echo $month ?>">
+<input type="hidden" id="calender-year" value="<?php echo $year ?>">
 </table>
 </div>

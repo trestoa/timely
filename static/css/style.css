@@ -41,6 +41,9 @@ header p{
 	width:90%;
 	height:100%;
 }
+.div-center{
+	text-align:center;
+}
 /* footer */
 footer{
 	max-width:450px;

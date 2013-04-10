@@ -21,6 +21,7 @@ function set_template(){
 		$GLOBALS['title'] = 'Calender | ' . $_SESSION['username'];
 		$GLOBALS['tmpl_navbar'] = 'logged_in_navbar.php';
 		$GLOBALS['tmpl_content'] = 'render_calender.php';
+		$GLOBALS['additional_script'] = '<script type="text/javascript" src="' . MAIN_URL . '/static/js/view_calender.js"></script>';
 	}
 }
 ?>

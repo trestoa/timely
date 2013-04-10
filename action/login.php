@@ -32,8 +32,8 @@ else{
 		if(mysql_num_rows($check_password)){
 			while($row = mysql_fetch_assoc($check_password)){
 				if($row['password'] == sha1($_POST['password'])){
-					$_SESSION['ID'] = $data['ID'];
-					$_SESSION['username'] = $data['username'];
+					$_SESSION['ID'] = $ID;
+					$_SESSION['username'] = $_POST['username'];
 					$_SESSION['logged_in'] = true;
 					header('Location: ../index.php');
 				}
