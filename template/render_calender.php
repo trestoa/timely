@@ -31,9 +31,8 @@ else{
     	<li><a href="#" id="prev">&laquo;</a></li>
     	<?php
 		$months = array("January","February","March","April","May","June","July","August","September","October","November","December");
-		echo '<li>';
 		for($i = 0; $i < 12; $i++){
-			echo '<li' . ($i == $month+1 ? 'class="active"' : '') . '><a href="#" id="month-pagination" onclick="">' . $months[$i] . '</a></li>';
+			echo '<li ' . ($i == $month+1 ? 'class="active"' : '') . '><a href="#" id="month-pagination" onclick="">' . $months[$i] . '</a></li>';
 		}
 		?>
         <li><a href="#" id="next">&raquo;</a></li>
@@ -64,7 +63,7 @@ if(!$appointments_query){
 
 if(mysql_num_rows($appointments_query)){
 	while($row = mysql_fetch_assoc($appointments_query)){
-		if($row['user_ID'] == $_SESSION['ID']){
+		if($row['user_id'] == $_SESSION['ID']){
 			$appointments[$row['date_day']] = $row['content'];
 		}
 	}

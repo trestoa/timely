@@ -39,7 +39,7 @@ header p{
 .appointment textarea{
 	resize: none;
 	width:90%;
-	height:100%;
+	height:auto;
 }
 .div-center{
 	text-align:center;

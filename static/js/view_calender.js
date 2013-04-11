@@ -38,9 +38,9 @@ function handleButtonClick(){
 	$(this).parent().children('textarea').height('90%');
 	$(this).parent().children('textarea').attr('readonly');
 	var day = $(this).parent().children('.calender-day').val();
-	var content = $(this).parent().children('textarea').text();
+	var content = $(this).parent().children('textarea').val();
 	$.ajax({
-		url: window.location.protocol + '//' + window.location.hostname + "/action/setAppointment.php",
+		url: location.href.substring(0,location.href.lastIndexOf('/')+1) + "setAppointment.php",
 		dataType: "text",
 		data: {
 			'month': $('#calender-month').val(),
