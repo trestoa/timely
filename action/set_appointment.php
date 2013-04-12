@@ -8,7 +8,7 @@ if(!isset($_SESSION['logged_in'])){
 }
 if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset($_GET['content'])){
 	//proof if the appointment exists
-	$query = 'SELECT date_day, date_month, date_year'
+	$query = 'SELECT date_day, date_month, date_year, id'
 		. ' FROM calender_appointment'
 		. ' WHERE user_id = ' . $_SESSION['ID'];
 	$check_appointment = mysql_query($query);
@@ -19,6 +19,7 @@ if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset
 		while($row = mysql_fetch_assoc($check_appointment)){
 			if($_GET['year'] == $row['date_year'] && $_GET['month'] == $row['date_month'] && $_GET['day'] == $row['date_day']){
 				$appointment_exists = true;
+				$id = $row['id'];
 			}
 		}
 		if(!isset($appointment_exists)){
@@ -43,7 +44,16 @@ if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset
 		}
 	}
 	else{
-		
+		$query = "UPDATE calender_appointment"
+			. " SET content = '" . mysql_real_escape_string(strip_tags($_GET['content'])) . "'"
+			. " WHERE id=" . $id;
+		$update_date = mysql_query($query);
+		if(!$update_date){
+			die("Database error: " . mysql_error());
+		}
+		else{
+			echo('success');
+		}
 	}
 }
 else{
