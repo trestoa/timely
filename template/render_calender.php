@@ -1,41 +1,47 @@
 <?php
-//include_once('../include.php');
+if(isset($_GET['month']) && isset($_GET['year'])){
+	include('../include.php');
+}
 //if the user is not logged in return error
-if($_SESSION['logged_in'] = false){
+if(!isset($_SESSION['logged_in'])){
 	echo('error');
 	exit();
 }
 //get the request information
-if(isset($_GET['day']) && isset($_GET['month']) && isset($_GET['year'])){
-	
+if(isset($_GET['month']) && isset($_GET['year'])){
+	$month = $_GET['month'];
+	$year = $_GET['year'];
+	$first_day = date('N', strtotime(1 . date("F", mktime(0, 0, 0, $month, 10)) . $year));
 }
 //if the script is called from the server, render the default calender
 else{
-	echo('<div class="calender-content container">');
+	echo('<div class="container" id="calender-content">');
 	if(isset($_SESSION['last_date'])){
-		
+		$month = $_SESSION['current_date_month'];
+		$year = $_SESSION['current_date_year'];
+		$first_day = date('N', strtotime(1 . date("F", mktime(0, 0, 0, $month, 10)) . $year));
 	}
 	else{
 		$date = getdate();
 		$month = $date['mon'];
 		$year = $date['year'];
 		$first_day = date('N', strtotime(1 . $date['month'] . $year));
+		$_SESSION['current_date_month'] = $month;
+		$_SESSION['current_date_year'] = $year;
 	}
 }
 ?>
 <div class="div-center">
-	<h2 id="year"><?php echo $year ?></h2>
+	<h2 id="year"><button class="btn btn-link" id="prev_year">&larr;</button><?php echo $year ?><button class="btn btn-link" id="next_year">&rarr;</button></h2>
 </div>
 <div class="pagination pagination-centered pagination-small">
 	<ul>
-    	<li><a href="#" id="prev">&laquo;</a></li>
     	<?php
 		$months = array("January","February","March","April","May","June","July","August","September","October","November","December");
 		for($i = 0; $i < 12; $i++){
-			echo '<li ' . ($i == $month+1 ? 'class="active"' : '') . '><a href="#" id="month-pagination" onclick="">' . $months[$i] . '</a></li>';
+			echo '<li ' . ($i == $month-1 ? 'class="active"' : '') . '><a class="month-pagination" onclick="setNewCalender(' . ($i+1) .')">' . $months[$i] . '</a></li>' . "\n";
 		}
 		?>
-        <li><a href="#" id="next">&raquo;</a></li>
     </ul>
 </div>
 
@@ -72,27 +78,28 @@ if(mysql_num_rows($appointments_query)){
 //render the calender
 $day=1;
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
-while($day <= ceil($daysInMonth/7)*7){
-	if($day % 7 == 1){
-		echo('<tr>');
-	}
-	if($day <= $first_day || $day - $first_day > $daysInMonth){
-		echo ('<td class="calender-inactive"></td>');
-	}
-	else{
-		echo('<td class="appointment"><textarea readonly>');
-		if(isset($appointments[$day])){
-			echo($appointments[$day]);
+for($j = 0; $j<10; $j++){
+	echo('<tr>' . "\n");
+	for($i = 0; $i < 7; $i++){
+		if(($i < $first_day && $j == 0) || $day > $daysInMonth){
+			echo ('<td class="calender-inactive"></td>' . "\n");
 		}
-		echo('</textarea><input type="hidden" class="calender-day" value="' . $day . '"></td>');
+		else{
+			echo('<td class="appointment"><textarea readonly>' . "\n");
+			if(isset($appointments[$day])){
+				echo($appointments[$day]);
+			}
+			echo('</textarea><input type="hidden" class="calender-day" value="' . $day . '"></td>' . "\n");
+			$day++;
+		}
 	}
-	if($day % 7 == 0){
-		echo('</tr>');
+	echo('</tr>' . "\n");
+	if($day > $daysInMonth){
+		break;
 	}
-	$day++;
 }
 ?>
+</table>
 <input type="hidden" id="calender-month" value="<?php echo $month ?>">
 <input type="hidden" id="calender-year" value="<?php echo $year ?>">
-</table>
 </div>
