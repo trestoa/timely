@@ -34,7 +34,7 @@ if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset
 		$query = "INSERT INTO calender_appointment"
 			. " (user_id, date_day, date_month, date_year, content)"
 			. " VALUES"
-			. " (" . $_SESSION['ID'] . ", " . $_GET['day'] . ", " . $_GET['month'] . ", " . $_GET['year'] . ", '" . $_GET['content'] . "')";
+			. " (" . mysql_real_escape_string(strip_tags($_SESSION['ID'])) . ", " . mysql_real_escape_string(strip_tags($_GET['day'])) . ", " . mysql_real_escape_string(strip_tags($_GET['month'])) . ", " . mysql_real_escape_string(strip_tags($_GET['year'])) . ", '" . mysql_real_escape_string(strip_tags($_GET['content'])) . "')";
 		$insert_date = mysql_query($query);
 		if(!$insert_date){
 			die("Database error: " . mysql_error());

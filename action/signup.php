@@ -27,7 +27,7 @@ else{
 		$query = "INSERT INTO user"
 			. " (username, email, password)"
 			. " VALUES"
-			. " ('". $_POST['username'] . "', '" . $_POST['email'] . "', '" . sha1($_POST['password']) . "')";
+			. " ('". mysql_real_escape_string(strip_tags($_POST['username'])) . "', '" . mysql_real_escape_string(strip_tags($_POST['email'])) . "', '" . sha1($_POST['password']) . "')";
 		$create_user = mysql_query($query);
 		if(!$create_user){
 			die("Database error: " . mysql_error());
@@ -35,7 +35,7 @@ else{
 		//Getting the new users ID
 		$query = "SELECT ID"
 			. " FROM user"
-			. " WHERE username = '" . $_POST['username'] . "'";
+			. " WHERE username = '" . mysql_real_escape_string(strip_tags($_POST['username'])) . "'";
 		$get_id = mysql_query($query);
 		if(!$get_id){
 			die("Database error: " . mysql_error());
