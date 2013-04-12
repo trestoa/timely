@@ -44,6 +44,9 @@ header p{
 .div-center{
 	text-align:center;
 }
+.calender_day{
+	margin-bottom:5px;
+}
 /* footer */
 footer{
 	max-width:450px;

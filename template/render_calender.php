@@ -41,13 +41,13 @@ else{
     	<?php
 		$months = array("January","February","March","April","May","June","July","August","September","October","November","December");
 		for($i = 0; $i < 12; $i++){
-			echo '<li ' . ($i == $month-1 ? 'class="active"' : '') . '><a class="month-pagination" onclick="setNewCalender(' . ($i+1) .')">' . $months[$i] . '</a></li>' . "\n";
+			echo '<li ' . ($i == $month-1 ? 'class="active"' : '') . '><a class="month-pagination" onclick="changeMonth(' . ($i+1) .')">' . $months[$i] . '</a></li>' . "\n";
 		}
 		?>
     </ul>
 </div>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-condensed">
 <tr>
   <th>Sunday</th>
   <th>Monday</th>
@@ -87,7 +87,7 @@ for($j = 0; $j<10; $j++){
 			echo ('<td class="calender-inactive"></td>' . "\n");
 		}
 		else{
-			echo('<td class="appointment"><textarea>' . "\n");
+			echo('<td class="appointment"><span class="badge badge-inverse calender_day">' . $day . '</span>' . "\n" . '<textarea>' . "\n");
 			if(isset($appointments[$day])){
 				echo($appointments[$day]);
 			}
