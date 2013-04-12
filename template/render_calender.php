@@ -18,7 +18,7 @@ if(isset($_GET['month']) && isset($_GET['year'])){
 //if the script is called from the server, render the default calender
 else{
 	echo('<div class="container" id="calender-content">');
-	if(isset($_SESSION['last_date'])){
+	if(isset($_SESSION['current_date_month']) && isset($_SESSION['current_date_year'])){
 		$month = $_SESSION['current_date_month'];
 		$year = $_SESSION['current_date_year'];
 		$first_day = date('N', strtotime(1 . date("F", mktime(0, 0, 0, $month, 10)) . $year));
@@ -31,6 +31,9 @@ else{
 		$_SESSION['current_date_month'] = $month;
 		$_SESSION['current_date_year'] = $year;
 	}
+}
+if($first_day == 7){
+	$first_day = 1;
 }
 ?>
 <div class="div-center">
