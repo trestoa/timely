@@ -25,6 +25,9 @@ function handleAppointmentFocus(){
 }
 
 function handleSaveAppointmentResponse(data){
+	if(data != 'success'){
+		$('#javascript-alert-area').html('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button><p><strong>Ooops,</strong> something went wrong, please try again..</p></div>');
+	}
 }
 
 function handleButtonClick(){
@@ -48,6 +51,26 @@ function handleButtonClick(){
 }
 
 function setNewCalender(month){
+	$.ajax({
+		url: location.href.substring(0,location.href.lastIndexOf('/')+1) + "template/render_calender.php",
+		dataType: "html",
+		data: {
+			'month': month,
+			'year': year
+		},
+		success: handleResponse
+	});
+}
+$('#prev_year').click(function(){
+	changeYear('back')
+});
+
+$('#next_year').click(function(){
+	changeYear('forward')
+});
+
+function changeYear(direction){
+	var newYear = (direction == 'forward' ? year+1 : year-1);
 	$.ajax({
 		url: location.href.substring(0,location.href.lastIndexOf('/')+1) + "template/render_calender.php",
 		dataType: "html",
