@@ -7,6 +7,14 @@ function handleResponse(data){
 	}
 	$("#calender-content").html(data);
 	$('.appointment').focusin(handleAppointmentFocus);
+	$('#prev_year').click(function(){
+		changeYear('back')
+	});
+
+	$('#next_year').click(function(){
+		changeYear('forward')
+	});
+	year = $('#calender-year').val();
 }
 
 $('.appointment').focusin(handleAppointmentFocus);
@@ -21,6 +29,7 @@ function handleAppointmentFocus(){
 	}
 	else if(!$(this).has('button').length){
 		$('#javascript-alert-area').html('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button><p><strong>Ooops,</strong> please close the first edit-box before you open another one.</p></div>');
+		$(this).children('textarea').blur();
 	}
 }
 
@@ -32,7 +41,6 @@ function handleSaveAppointmentResponse(data){
 
 function handleButtonClick(){
 	$(this).parent().children('textarea').height('90%');
-	$(this).parent().children('textarea').attr('readonly');
 	var day = $(this).parent().children('.calender-day').val();
 	var content = $(this).parent().children('textarea').val();
 	$.ajax({
@@ -70,13 +78,14 @@ $('#next_year').click(function(){
 });
 
 function changeYear(direction){
-	var newYear = (direction == 'forward' ? year+1 : year-1);
+	var newYear = (direction == 'forward' ? Number(year)+1 : Number(year)-1);
+	var month = $('#calender-month').val();
 	$.ajax({
 		url: location.href.substring(0,location.href.lastIndexOf('/')+1) + "template/render_calender.php",
 		dataType: "html",
 		data: {
 			'month': month,
-			'year': year
+			'year': newYear
 		},
 		success: handleResponse
 	});

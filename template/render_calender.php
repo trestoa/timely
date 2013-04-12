@@ -87,7 +87,7 @@ for($j = 0; $j<10; $j++){
 			echo ('<td class="calender-inactive"></td>' . "\n");
 		}
 		else{
-			echo('<td class="appointment"><textarea readonly>' . "\n");
+			echo('<td class="appointment"><textarea>' . "\n");
 			if(isset($appointments[$day])){
 				echo($appointments[$day]);
 			}
