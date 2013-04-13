@@ -12,7 +12,7 @@ else{
 	else{
 		//Look if the choosen username exists
 		$query = "SELECT username"
-			. " FROM user";
+			. " FROM calender_user";
 		$check_username = mysql_query($query);
 		if(!$check_username){
 			die('Database error: ' . mysql_error());
@@ -24,7 +24,7 @@ else{
 				}
 			}
 		}
-		$query = "INSERT INTO user"
+		$query = "INSERT INTO calender_user"
 			. " (username, email, password)"
 			. " VALUES"
 			. " ('". mysql_real_escape_string(strip_tags($_POST['username'])) . "', '" . mysql_real_escape_string(strip_tags($_POST['email'])) . "', '" . sha1($_POST['password']) . "')";
@@ -34,7 +34,7 @@ else{
 		}
 		//Getting the new users ID
 		$query = "SELECT ID"
-			. " FROM user"
+			. " FROM calender_user"
 			. " WHERE username = '" . mysql_real_escape_string(strip_tags($_POST['username'])) . "'";
 		$get_id = mysql_query($query);
 		if(!$get_id){
