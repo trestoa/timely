@@ -5,7 +5,7 @@
 <b class="caret"></b>
 </a>
 <ul class="dropdown-menu">
-<li><a tabindex="-1" href="<?php echo(MAIN_URL . "/action/view_account.php")?>">Your account</a></li>
+<!--li><a tabindex="-1" href="<?php /*echo(MAIN_URL . "/action/view_account.php")*/?>">Your account</a></li-->
 <li><a tabindex="-1" href="<?php echo(MAIN_URL . "/action/logout.php")?>">Logout</a></li>
 </ul>
 </li>

@@ -5,7 +5,7 @@ if(!isset($_POST['username']) && !isset($_POST['password'])){
 	alert('Invalid login data!');
 }
 else{
-	if($_SESSION['logged_in']){
+	if($_SESSION['logged_in'] == true){
 		alert('You are already logged in!');
 	}
 	$query = "SELECT username, ID"

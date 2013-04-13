@@ -3,7 +3,7 @@ if(isset($_GET['month']) && isset($_GET['year'])){
 	include('../include.php');
 }
 //if the user is not logged in return error
-if(!isset($_SESSION['logged_in'])){
+if($_SESSION['logged_in'] != true){
 	echo('error');
 	exit();
 }
