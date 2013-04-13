@@ -1,4 +1,4 @@
-<!-- Load addiotional and main script at very last! -->
+<!-- Load additional and main script at very last! -->
 <?php 
 if(isset($additional_script)){
 	echo($additional_script . "\n");
