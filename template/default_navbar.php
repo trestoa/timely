@@ -1,4 +1,4 @@
-<ul class="nav pull-right">
+<ul class="nav pull-right hidden-phone">
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 Log In
