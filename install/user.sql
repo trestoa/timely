@@ -1,4 +1,4 @@
-﻿CREATE TABLE IF NOT EXISTS `calender_user` (
+﻿CREATE TABLE IF NOT EXISTS `timely_user` (
 	`ID` int(10) NOT NULL AUTO_INCREMENT,
 	`email` varchar(100) NOT NULL,
 	`username` varchar(30) NOT NULL,

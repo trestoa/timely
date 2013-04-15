@@ -1,4 +1,4 @@
-﻿CREATE TABLE IF NOT EXISTS `calender_appointment` (
+﻿CREATE TABLE IF NOT EXISTS `timely_appointment` (
 	`id` int(10) NOT NULL AUTO_INCREMENT,
 	`user_id` int(10) NOT NULL,
 	`date_day` int(1) NOT NULL default 0,
