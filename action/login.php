@@ -9,7 +9,7 @@ else{
 		alert('You are already logged in!');
 	}
 	$query = "SELECT username, ID"
-		. " FROM calender_user";
+		. " FROM timely_user";
 	$check_username = mysql_query($query);
 	if(!$check_username){
 		die('Database error: ' + mysql_error);
@@ -22,7 +22,7 @@ else{
 		}
 	}
 	if($ID) {
-		$query = "SELECT password FROM calender_user"
+		$query = "SELECT password FROM timely_user"
 			. " WHERE ID = '" . $ID
 			. "'";
 		$check_password = mysql_query($query);

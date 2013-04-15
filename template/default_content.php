@@ -1,4 +1,5 @@
 <div class="container">
+	<!-- Login for mobile devices -->
 	<div class="visible-phone">
     	<ul class="nav nav-pills">
        		<li class="active">
@@ -64,7 +65,7 @@
         </div>
     </div>
     <header>
-        <h1>Calender</h1>
+        <h1>timely</h1>
         <p>A simple webbased calender.</p>
     </header>
     <hr>

@@ -9,7 +9,7 @@ if(!isset($_SESSION['logged_in'])){
 if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset($_GET['content'])){
 	//proof if the appointment exists
 	$query = 'SELECT date_day, date_month, date_year, id'
-		. ' FROM calender_appointment'
+		. ' FROM timely_appointment'
 		. ' WHERE user_id = ' . $_SESSION['ID'];
 	$check_appointment = mysql_query($query);
 	if(!$check_appointment){
@@ -31,7 +31,7 @@ if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset
 	}
 	//if the appointment not exists, insert a new
 	if(!$appointment_exists){
-		$query = "INSERT INTO calender_appointment"
+		$query = "INSERT INTO timely_appointment"
 			. " (user_id, date_day, date_month, date_year, content)"
 			. " VALUES"
 			. " (" . mysql_real_escape_string(strip_tags($_SESSION['ID'])) . ", " . mysql_real_escape_string(strip_tags($_GET['day'])) . ", " . mysql_real_escape_string(strip_tags($_GET['month'])) . ", " . mysql_real_escape_string(strip_tags($_GET['year'])) . ", '" . mysql_real_escape_string(strip_tags($_GET['content'])) . "')";
@@ -44,7 +44,7 @@ if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset
 		}
 	}
 	else{
-		$query = "UPDATE calender_appointment"
+		$query = "UPDATE timely_appointment"
 			. " SET content = '" . mysql_real_escape_string(strip_tags($_GET['content'])) . "'"
 			. " WHERE id=" . $id;
 		$update_date = mysql_query($query);

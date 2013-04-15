@@ -2,7 +2,7 @@
 //Global include
 include('../include.php');
 if($_SESSION['logged_in'] == true){
-	//kill sessionm data
+	//kill session data
 	$_SESSION = array();
 	
 	//kill session

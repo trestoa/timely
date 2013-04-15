@@ -64,7 +64,7 @@ if($first_day == 7){
 <?php
 //get the appointments for database
 $query = "SELECT content, user_id, date_day"
-	. " FROM calender_appointment"
+	. " FROM timely_appointment"
 	. " WHERE date_year = '" . $year . "' and date_month = '" . $month . "'";
 
 $appointments_query = mysql_query($query);	
@@ -90,7 +90,7 @@ for($j = 0; $j<10; $j++){
 			echo ('<td class="calender-inactive"></td>' . "\n");
 		}
 		else{
-			echo('<td class="appointment"><span class="badge badge-inverse calender_day">' . $day . '</span>' . "\n" . '<textarea>' . "\n");
+			echo('<td class="appointment"><span class="badge badge-inverse">' . $day . '</span>' . "\n" . '<textarea class="appointment-textarea">' . "\n");
 			if(isset($appointments[$day])){
 				echo($appointments[$day]);
 			}

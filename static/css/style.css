@@ -1,8 +1,5 @@
 @charset "utf-8";
 /* Global */
-body{
- padding:60px; 
-}
 alert{
 	position:static;
 	top:100px;
@@ -38,8 +35,8 @@ header p{
 }
 .appointment textarea{
 	resize: none;
-	width:90%;
-	height:auto;
+	width:140px;
+	height:100px;
 }
 .div-center{
 	text-align:center;
