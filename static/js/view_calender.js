@@ -13,6 +13,10 @@ $('#next_year').click(function(){
 
 $('.appointment').focusin(appointmentFocusIn);
 
+$('.appointment').focusout(function(){
+	saveAppointment($(this));
+});
+
 function handleResponse(data){
 	if(data == 'error'){
 		$('#javascript-alert-area').append('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button><p><strong>Ooops,</strong> something wnt wrong. Please try again by reloading this site.</p></div>');
@@ -33,17 +37,19 @@ function handleResponse(data){
 
 function appointmentFocusIn(){
 	if(!editing){
-		$(this).children('textarea').height(50);
+		$(this).children('textarea').height(60);
 		$(this).append('<button class="btn btn-mini btn-primary calender-edit-done">Done</button>');
-		$(".calender-edit-done").click(saveAppointment);
+		$(".calender-edit-done").click(function(){
+			saveAppointment($(this).parent());
+		});
 		editing = true;
 	}
 }
 
-function saveAppointment(){
-	$(this).parent().children('textarea').height(100);
-	var day = $(this).parent().children('.calender-day').val();
-	var content = $(this).parent().children('textarea').val();
+function saveAppointment(e){
+	e.children('textarea').height(85);
+	var day = $(e).children('.calender-day').val();
+	var content = $(e).children('textarea').val();
 	$.ajax({
 		url: location.href.substring(0,location.href.lastIndexOf('/')+1) + "action/set_appointment.php",
 		dataType: "text",
@@ -60,7 +66,7 @@ function saveAppointment(){
 			}
 		}
 	});
-	$(this).remove();
+	$(e).children('.calender-edit-done').remove();
 	editing = false
 }
 

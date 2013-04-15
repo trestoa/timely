@@ -90,11 +90,11 @@ for($j = 0; $j<10; $j++){
 			echo ('<td class="calender-inactive"></td>' . "\n");
 		}
 		else{
-			echo('<td class="appointment"><span class="badge badge-inverse">' . $day . '</span>' . "\n" . '<textarea class="appointment-textarea">' . "\n");
+			echo('<td class="appointment">' . "\n" . '<span class="badge badge-inverse calender-day-header">' . $day . '</span>' . "\n" . '<textarea class="appointment-textarea">' . "\n");
 			if(isset($appointments[$day])){
 				echo($appointments[$day]);
 			}
-			echo('</textarea><input type="hidden" class="calender-day" value="' . $day . '"></td>' . "\n");
+			echo("\n" . '</textarea>' . "\n" . '<input type="hidden" class="calender-day" value="' . $day . '">' . "\n" . '</td>' . "\n");
 			$day++;
 		}
 	}

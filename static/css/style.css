@@ -36,12 +36,12 @@ header p{
 .appointment textarea{
 	resize: none;
 	width:140px;
-	height:100px;
+	height:85px;
 }
 .div-center{
 	text-align:center;
 }
-.calender_day{
+.calender-day-header{
 	margin-bottom:5px;
 }
 /* footer */
