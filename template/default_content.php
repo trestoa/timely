@@ -72,4 +72,33 @@
     <div class="content">
         
     </div>
+    <ul class="thumbnails">
+        <li class="span4">
+			<div class="thumbnail">
+				<img src="<?php echo MAIN_URL . '/static/img/manage.png'?>" alt="">
+				<div class="caption">
+				<h2>Central Managed</h2>
+				<p>Save your appointments central on the server and access them from everywhere.</p>
+				</div>
+			</div>
+        </li>
+         <li class="span4">
+			<div class="thumbnail">
+				<img src="<?php echo MAIN_URL . '/static/img/simple.png'?>" alt="">
+				<div class="caption">
+				<h2>Simple Interface</h2>
+				<p>Not much colors, images or content. The lightweight interface helps you to focus your appointments.</p>
+				</div>
+			</div>
+        </li>
+		 <li class="span4">
+			<div class="thumbnail">
+				<img src="<?php echo MAIN_URL . '/static/img/dynamic.png'?>" alt="">
+				<div class="caption">
+				<h2>Fast and Dynamic</h2>
+				<p>Every month is just one click away.</p>
+				</div>
+			</div>
+        </li>
+    </ul>
 </div>
