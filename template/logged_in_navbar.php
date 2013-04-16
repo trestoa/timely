@@ -5,13 +5,15 @@
 <b class="caret"></b>
 </a>
 <ul class="dropdown-menu">
+<!-- Not implemented yet!! -->
 <!--li><a tabindex="-1" href="<?php /*echo(MAIN_URL . "/action/view_account.php")*/?>">Your account</a></li-->
 <li><a tabindex="-1" href="<?php echo(MAIN_URL . "/action/logout.php")?>">Logout</a></li>
 </ul>
 </li>
-<li>
+<!-- Not implemented as well. -->
+<!--li>
 <form class="navbar-search pull-left">
 <input type="text" class="search-query" placeholder="Search">
-</form>
+</form-->
 </li>
 </ul>	
