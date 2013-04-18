@@ -17,11 +17,24 @@ function set_template(){
 		$GLOBALS['tmpl_navbar'] = 'default_navbar.php';
 		$GLOBALS['tmpl_content'] = 'default_content.php';
 	}
+	elseif($_SESSION['logged_in'] == true && isset($_GET['action'])){
+		switch($_GET['action']){
+			case 'accounting':
+				$GLOBALS['title'] = $_SESSION['username'] . '`s timely';
+				$GLOBALS['tmpl_navbar'] = 'logged_in_navbar.php';
+				$GLOBALS['tmpl_content'] = 'view_account.php';
+			break;
+		}
+	}
 	else{
 		$GLOBALS['title'] = $_SESSION['username'] . '`s timely';
 		$GLOBALS['tmpl_navbar'] = 'logged_in_navbar.php';
 		$GLOBALS['tmpl_content'] = 'render_calender.php';
 		$GLOBALS['additional_script'] = '<script type="text/javascript" src="' . MAIN_URL . '/static/js/view_calender.js"></script>';
+	}
+	if(isset($_GET['view_public'])){
+		$GLOBALS['tmpl_content'] = 'render_public_calender.php';
+		$GLOBALS['additional_script'] = '<script type="text/javascript" src="' . MAIN_URL . '/static/js/view_public_calender.js"></script>';
 	}
 }
 ?>

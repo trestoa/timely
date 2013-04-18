@@ -1,22 +1,16 @@
 <?php
-if(isset($_GET['month']) && isset($_GET['year'])){
+
+if(isset($_GET['view_public']) && isset($_GET['month']) && isset($_GET['year'])){
 	include('../include.php');
-}
-//if the user is not logged in return error
-if($_SESSION['logged_in'] != true){
-	echo('error');
-	exit();
-}
-//get the request information
-elseif(isset($_GET['month']) && isset($_GET['year'])){
 	$month = $_GET['month'];
 	$year = $_GET['year'];
 	$first_day = date('N', strtotime(1 . date("F", mktime(0, 0, 0, $month, 10)) . $year));
 	$_SESSION['current_date_month'] = $month;
 	$_SESSION['current_date_year'] = $year;
 }
-elseif(isset($_GET['calender_id'])){
-	$_SESSION['active_calender_id'] = $_GET['calender_id'];
+elseif(isset($_GET['view_public'])){
+	echo('<div class="container" id="calender-content">');
+	$_SESSION['active_calender_id'] = mysql_real_escape_string(strip_tags($_GET['view_public']));
 	$date = getdate();
 	$month = $date['mon'];
 	$year = $date['year'];
@@ -24,48 +18,32 @@ elseif(isset($_GET['calender_id'])){
 	$_SESSION['current_date_month'] = $month;
 	$_SESSION['current_date_year'] = $year;
 }
-//if the script is called from the server, render the default calender
 else{
-	echo('<div class="container" id="calender-content">');
-	if(isset($_SESSION['current_date_month']) && isset($_SESSION['current_date_year'])){
-		$month = $_SESSION['current_date_month'];
-		$year = $_SESSION['current_date_year'];
-		$first_day = date('N', strtotime(1 . date("F", mktime(0, 0, 0, $month, 10)) . $year));
-	}
-	else{
-		$date = getdate();
-		$month = $date['mon'];
-		$year = $date['year'];
-		$first_day = date('N', strtotime(1 . $date['month'] . $year));
-		$_SESSION['current_date_month'] = $month;
-		$_SESSION['current_date_year'] = $year;
-	}
+	echo("Error: invalid arguments");
+	exit();
 }
 if($first_day == 7){
 	$first_day = 1;
 }
+//Proof if the calender is really public
+$query = "SELECT `public`, name, id"
+	. " FROM timely_calender";
+
+$check_calender = mysql_query($query);
+if(!$check_calender){
+	die('Database error: ' . mysql_error());
+}
+$calender_checked = false;
+while($row = mysql_fetch_assoc($check_calender)){
+	if($row['id'] == $_SESSION['active_calender_id'] && $row['public'] == 1){
+		$name = $row['name'];
+		$calender_checked = true;
+	}
+}
+if($calender_checked == false){
+	alert('This calender is not public or does not exist!');
+}
 ?>
-<div class="calender-select">
-	<p>
-    	Active Calender: 
-        <select>
-        <?php
-		//set the calenders
-		$query = "SELECT id, name"
-			. " FROM timely_calender"
-			. " WHERE owner_id = " . $_SESSION['ID'];
-		
-		$get_calenders = mysql_query($query);
-		if(!$get_calenders){
-			die("Database error: " . mysql_error());
-		}
-		while($row = mysql_fetch_assoc($get_calenders)){
-			echo('<option' . ($row['id'] == $_SESSION['active_calender_id'] ? 'selected="selected"' : '') . '>' . "\n" . $row['name'] . '<input type="hidden" class="calender" value="' . $row['id'] . '">' . "\n" . '</option>');
-		}
-		?>
-        </select>
-    </p>
-</div>
 <div class="div-center">
 	<h2 id="year"><button class="btn btn-link" id="prev_year">&larr;</button><?php echo $year ?><button class="btn btn-link" id="next_year">&rarr;</button></h2>
 </div>
@@ -90,7 +68,6 @@ if($first_day == 7){
   <th>Friday</th>
   <th>Saturday</th>
 </tr>
-
 <?php
 //get the appointments from database
 $query = "SELECT content, calender_id, date_day"
@@ -120,11 +97,11 @@ for($j = 0; $j<10; $j++){
 			echo ('<td class="calender-inactive"></td>' . "\n");
 		}
 		else{
-			echo('<td class="appointment">' . "\n" . '<span class="badge badge-inverse calender-day-header">' . $day . '</span>' . "\n" . '<textarea class="appointment-textarea">' . "\n");
+			echo('<td class="appointment">' . "\n" . '<span class="badge badge-inverse calender-day-header">' . $day . '</span>' . "\n" . '<textarea readonly class="appointment-textarea">' . "\n");
 			if(isset($appointments[$day])){
 				echo($appointments[$day]);
 			}
-			echo("\n" . '</textarea>' . "\n" . '<input type="hidden" class="calender-day" value="' . $day . '">' . "\n" . '</td>' . "\n");
+			echo("\n" . '</textarea></td>');
 			$day++;
 		}
 	}
@@ -137,4 +114,5 @@ for($j = 0; $j<10; $j++){
 </table>
 <input type="hidden" id="calender-month" value="<?php echo $month ?>">
 <input type="hidden" id="calender-year" value="<?php echo $year ?>">
+<input type="hidden" id="calender-id" value="<?php echo $_SESSION['active_calender_id'] ?>">
 </div>

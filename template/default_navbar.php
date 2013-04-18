@@ -69,4 +69,7 @@ Sign Up
 </li>
 </ul>
 </li>
+<form class="navbar-search">
+<input type="text" class="search-query" placeholder="Search" id="search_public_calender">
+</form>
 </ul>

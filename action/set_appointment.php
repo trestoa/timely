@@ -10,7 +10,7 @@ if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset
 	//proof if the appointment exists
 	$query = 'SELECT date_day, date_month, date_year, id'
 		. ' FROM timely_appointment'
-		. ' WHERE user_id = ' . $_SESSION['ID'];
+		. ' WHERE calender_id = ' . $_SESSION['active_calender_id'];
 	$check_appointment = mysql_query($query);
 	if(!$check_appointment){
 		die('Database error: ' + mysql_error);
@@ -32,9 +32,9 @@ if(isset($_GET['year']) && isset($_GET['month']) && isset($_GET['day']) && isset
 	//if the appointment not exists, insert a new
 	if(!$appointment_exists){
 		$query = "INSERT INTO timely_appointment"
-			. " (user_id, date_day, date_month, date_year, content)"
+			. " (calender_id, date_day, date_month, date_year, content)"
 			. " VALUES"
-			. " (" . mysql_real_escape_string(strip_tags($_SESSION['ID'])) . ", " . mysql_real_escape_string(strip_tags($_GET['day'])) . ", " . mysql_real_escape_string(strip_tags($_GET['month'])) . ", " . mysql_real_escape_string(strip_tags($_GET['year'])) . ", '" . mysql_real_escape_string(strip_tags($_GET['content'])) . "')";
+			. " (" . mysql_real_escape_string(strip_tags($_SESSION['active_calender_id'])) . ", " . mysql_real_escape_string(strip_tags($_GET['day'])) . ", " . mysql_real_escape_string(strip_tags($_GET['month'])) . ", " . mysql_real_escape_string(strip_tags($_GET['year'])) . ", '" . mysql_real_escape_string(strip_tags($_GET['content'])) . "')";
 		$insert_date = mysql_query($query);
 		if(!$insert_date){
 			die("Database error: " . mysql_error());
