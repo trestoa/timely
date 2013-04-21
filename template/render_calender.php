@@ -60,7 +60,7 @@ if($first_day == 7){
 			die("Database error: " . mysql_error());
 		}
 		while($row = mysql_fetch_assoc($get_calenders)){
-			echo('<option' . ($row['id'] == $_SESSION['active_calender_id'] ? 'selected="selected"' : '') . '>' . "\n" . $row['name'] . '<input type="hidden" class="calender" value="' . $row['id'] . '">' . "\n" . '</option>');
+			echo('<option' . ($row['id'] == $_SESSION['active_calender_id'] ? ' selected="selected"' : '') . '>' . "\n" . $row['name'] . '<input type="hidden" class="calender" value="' . $row['id'] . '">' . "\n" . '</option>' . "\n");
 		}
 		?>
         </select>
