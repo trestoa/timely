@@ -50,9 +50,9 @@ else{
 		if(isset($ID)){
 			//Create the default calender
 			$query = "INSERT INTO timely_calender"
-				. " (owner_id, `name`)"
+				. " (owner_id, `name`, `default`)"
 				. " VALUES"
-				. " (" . $ID . ", '" . $username . "`s calender" . "')";
+				. " (" . $ID . ", '" . $username . "`s calender" . "', '1')";
 			
 			$create_default_calender = mysql_query($query);
 			if(!$create_default_calender){
@@ -70,7 +70,6 @@ else{
 			if(mysql_num_rows($get_id)){
 				$row = mysql_fetch_assoc($get_id);
 				$_SESSION['active_calender_id'] = $row['id'];
-				//$_SESSION['active_calender_name'] = $row['name'];
 			}
 			
 			//Finally, log the user in and redirect them to index

@@ -60,7 +60,7 @@ if($first_day == 7){
 			die("Database error: " . mysql_error());
 		}
 		while($row = mysql_fetch_assoc($get_calenders)){
-			echo('<option' . ($row['id'] == $_SESSION['active_calender_id'] ? ' selected="selected"' : '') . '>' . "\n" . $row['name'] . '<input type="hidden" class="calender" value="' . $row['id'] . '">' . "\n" . '</option>' . "\n");
+			echo('<option' . ($row['id'] == $_SESSION['active_calender_id'] ? ' selected="selected"' : '') . ' value="' . $row['id'] . '">' . "\n" . $row['name'] . "\n" . '</option>' . "\n");
 		}
 		?>
         </select>
@@ -124,7 +124,7 @@ for($j = 0; $j<10; $j++){
 			if(isset($appointments[$day])){
 				echo($appointments[$day]);
 			}
-			echo("\n" . '</textarea>' . "\n" . '<input type="hidden" class="calender-day" value="' . $day . '">' . "\n" . '</td>' . "\n");
+			echo('</textarea>' . "\n" . '<input type="hidden" class="calender-day" value="' . $day . '">' . "\n" . '</td>' . "\n");
 			$day++;
 		}
 	}
@@ -137,4 +137,5 @@ for($j = 0; $j<10; $j++){
 </table>
 <input type="hidden" id="calender-month" value="<?php echo $month ?>">
 <input type="hidden" id="calender-year" value="<?php echo $year ?>">
+<input type="hidden" id="calender-id" value="<?php echo $_SESSION['current_calender_id'] ?>">
 </div>
