@@ -42,7 +42,6 @@ else{
 		if(!$get_default_calender){
 			die('Database error: ' + mysql_error()); 
 		}
-		echo("hello");
 		if(mysql_num_rows($get_default_calender) > 0){
 			while($row = mysql_fetch_assoc($get_default_calender)){
 				if($row['default'] == 1){

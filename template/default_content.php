@@ -68,37 +68,37 @@
         <h1>timely</h1>
         <p>A simple webbased calender.</p>
     </header>
-    <hr>
-    <div class="content">
-        
+</div>
+<div class="main-content-wrapper">
+	<div class="container div-center">
+        <div class="row-fluid">
+            <div class="span4">
+                <div class="content">
+                    <img src="./static/img/manage.png" alt="" class="thumbnail-image">
+                    <div class="caption">
+                        <h2>Central Managed</h2>
+                        <p>Save your appointments central on the server and access them from everywhere.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+            	<img src="./static/img/simple.png" alt="" class="thumbnail-image">
+                <div class="content">
+                    <div class="caption">
+                        <h2>Simple Interface</h2>
+                        <p>Not much colors, images or content. The lightweight interface helps you to focus your appointments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="content">
+                    <img src="./static/img/dynamic.png" alt="" class="thumbnail-image">
+                    <div class="caption">
+                        <h2>Fast and Dynamic</h2>
+                        <p>Every month is just one click away.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul class="thumbnails">
-        <li class="span4">
-			<div class="thumbnail">
-				<img src="<?php echo MAIN_URL . '/static/img/manage.png'?>" alt="">
-				<div class="caption">
-				<h2>Central Managed</h2>
-				<p>Save your appointments central on the server and access them from everywhere.</p>
-				</div>
-			</div>
-        </li>
-         <li class="span4">
-			<div class="thumbnail">
-				<img src="<?php echo MAIN_URL . '/static/img/simple.png'?>" alt="">
-				<div class="caption">
-				<h2>Simple Interface</h2>
-				<p>Not much colors, images or content. The lightweight interface helps you to focus your appointments.</p>
-				</div>
-			</div>
-        </li>
-		 <li class="span4">
-			<div class="thumbnail">
-				<img src="<?php echo MAIN_URL . '/static/img/dynamic.png'?>" alt="">
-				<div class="caption">
-				<h2>Fast and Dynamic</h2>
-				<p>Every month is just one click away.</p>
-				</div>
-			</div>
-        </li>
-    </ul>
 </div>

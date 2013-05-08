@@ -1,8 +1,38 @@
 @charset "utf-8";
+
+/**********************************************************************
+
+timely, a webbased calender
+Copyright (C) 2013  Markus Klein <m@mklein.co.at>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+Made with <3
+
+***********************************************************************/
+
+/* Background images delivered from http://subtlepatterns.com/ */
+
+
 /* Global */
 alert{
 	position:static;
 	top:100px;
+}
+body{
+	background-image:url(../img/squairy_light.png);
 }
 
 /* Navbar */
@@ -14,6 +44,9 @@ alert{
 }
 .nav-form .control-group{
 	margin-bottom: 0px;
+}
+.navbar .navbar-inner{
+	background-color:#09F;	
 }
 
 /* Header */
@@ -44,25 +77,35 @@ header p{
 .calender-day-header{
 	margin-bottom:5px;
 }
+.calender-table{
+	background-color:rgb(255,255,255);
+}
+.calender-table-header-row{
+	background-image:url(../img/grey_wash_wall.png);
+}
+.main-content-wrapper{
+	background-image:url(../img/grey_wash_wall.png);
+	width:100%;
+}
+.main-content-wrapper .row-fluid .span4 .content{
+	color:rgb(255, 255, 255);
+}
+.main-content-wrapper .container{
+	padding-bottom:50px;
+}
+.thumbnail-image{
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
 /* footer */
 footer{
 	max-width:450px;
-	border-radius:5px;
 	margin-right:auto;
 	margin-left:auto;
 	margin-top:100px;
-	margin-bottom:20px;
+	margin-bottom:5px;
 	padding:33px;
+	padding-bottom:10px;
 	text-align:center;
-	background-color:#333;
-	color:#DDD;
-}
-footer a{
-	color: rgb(255, 255, 255);
-	text-decoration:none;
-}
-
-footer a:hover{
-	color: rgb(255, 255, 255);
-	text-decoration:none;
+	font-size:85%;
 }
