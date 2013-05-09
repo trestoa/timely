@@ -74,11 +74,15 @@ header p{
 .div-center{
 	text-align:center;
 }
+.calender-select{
+	margin-top:20px;
+}
 .calender-day-header{
 	margin-bottom:5px;
 }
 .calender-table{
 	background-color:rgb(255,255,255);
+	border-color:rgba(102,102,102,0.7);
 }
 .calender-table-header-row{
 	background-image:url(../img/grey_wash_wall.png);
