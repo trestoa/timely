@@ -65,6 +65,7 @@ header p{
 /* content */
 .appointment{
 	width:100px;
+	background-color:rgba(0, 136, 205, 0.5);
 }
 .appointment textarea{
 	resize: none;
