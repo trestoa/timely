@@ -12,7 +12,7 @@ if(isset($_POST['config-service-name']) && isset($_POST['config-hoster-url']) &&
 		//Name of the hoster
 		define('HOSTER_NAME', '" . $_POST['config-hoster-name'] . "');
 		//Contact EMail for support
-		define('CONTACT_NAME', '" .$_POST['config-contact-email']  . "');
+		define('CONTACT_EMAIL', '" .$_POST['config-contact-email']  . "');
 		//Main (root) URL of the service; Without the `/` at the end and with the protocol!! E.g. http://example.com
 		define('MAIN_URL', '" . $_POST['config-main-url'] . "');
 		?>";
@@ -33,9 +33,9 @@ else:
     </div>
     <div class="control-group">
     	<label class="control-label" for="inputHosterUrl">Hoster URL</label>
-        <p>Your / your webmasters Webpage.</p>
         <div class="controls">
         	<input type="text" id="inputHosterUrl" name="config-hoster-url" placeholder="Hoster URL" required="required">
+            <p>Your / your webmasters Webpage.</p>
         </div>
     </div>
 	<div class="control-group">
@@ -48,14 +48,14 @@ else:
     <div class="control-group">
     	<label class="control-label" for="inputContactEmail">Contact Email</label>
         <div class="controls">
-        	<input type="email" id="inputContactEmail" name="config-contact-email" placeholder="Email" required="required">
+        	<input type="text" id="inputContactEmail" name="config-contact-email" placeholder="Email" required="required">
             <p>An email-address appearing in the footer of every page. E.g. for support.</p>
         </div>
     </div>
     <div class="control-group">
     	<label class="control-label" for="inputMainUrl">Main Url</label>
         <div class="controls">
-        	<input type="text" id="inputMainUrl" name="config-hoster-name" placeholder="http://example.tld" required="required">
+        	<input type="text" id="inputMainUrl" name="config-main.url" placeholder="http://example.tld" required="required">
             <p>The main URL if your service. <strong>Without the `/` at the end and with the protocol!!</strong></p>
         </div>
     </div>
