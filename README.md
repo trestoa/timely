@@ -8,7 +8,7 @@ Javascript + jQuery as frontend.
 My version of timely is up at [timely.mklein.co.at](http://timely.mklein.co.at/).
 
 # Self Hosting
-Of cource you can also host timelsy yourself. Unfontuntly I have not had the time to write an web installer yet, but it is not that diffifult to install timely.
+Of cource you can also host timelsy yourself. Unfortuntly I have not had the time to write an web installer yet, but it is not that diffifult to install timely.
 
 ## Requirements
 * MySql database
@@ -25,4 +25,5 @@ If recommand you to use git as version controlling system, but if you want, you 
 After you´ve downloaded the source you can step forward to the installation isself.
 
 ### Database
-timely needs only 
+timely needs only 3 mysql datatables, so it is very lightweight and easy to maintain.
+

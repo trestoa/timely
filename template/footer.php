@@ -8,6 +8,8 @@ if(isset($additional_script)){
 <footer>
 <p>powered by: <a href="http://php.net/">PHP</a>, <a href="http://jquery.com/">jQuery</a> and <a href="http://twitter.github.com">Twitter Bootstrap</a></p>
 <p>open source: <a href="https://github.com/kleiinnn/timely">Github</a></p>
+<p>hosted by <?php echo('<a href="http://' . HOSTER_URL . '">' . HOSTER_NAME . '</a>'); ?></p>
+<p>contact: <?php echo('<a href="mailto:' . CONTACT_EMAIL . '">' . CONTACT_EMAIL . '</a>'); ?>
 <p>&copy; 2013, <a href="http://mklein.co.at/">Markus Klein</a></p>
 <p>made with &hearts;</p>
 </footer>
