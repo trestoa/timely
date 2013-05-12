@@ -5,10 +5,10 @@
 if(isset($_POST['sql-host']) && isset($_POST['sql-database']) && isset($_POST['sql-username']) && isset($_POST['sql-password'])):
 	$file_content =
 		"<?php
-		define('SQL_HOST', '" . $_POST['host'] . "');
-		define('SQL_USER', '" . $_POST['username'] . "');
-		define('SQL_PASSWORD', '" . $_POST['password'] . "');
-		define('SQL_DB', '" . $_POST['database'] . "');
+		define('SQL_HOST', '" . $_POST['sql-host'] . "');
+		define('SQL_USER', '" . $_POST['sql-username'] . "');
+		define('SQL_PASSWORD', '" . $_POST['sql-password'] . "');
+		define('SQL_DB', '" . $_POST['sql-database'] . "');
 		?>";
 	file_put_contents('../config/mysql_config.php', $file_content) or die('Error by writing mysql_config file!!');
 	header('Location: index.php?step=3');

@@ -5,8 +5,8 @@ if(isset($_POST['create_tables'])):
 	include('../config/mysql_config.php');
 	$link = mysqli_connect(SQL_HOST, SQL_USER, SQL_PASSWORD, SQL_DB) or die("Error, can connect to database!");
 	$queries = file_get_contents('./sql/timely_user.sql') or die('Error while reading file!');
-	$queries += file_get_contents('./sql/timely_appointment.sql') or die('Error while reading file!');
-	$queries += file_get_contents('./sql/timely_calender.sql') or die('Error while reading file!');
+	$queries .= file_get_contents('./sql/timely_appointment.sql') or die('Error while reading file!');
+	$queries .= file_get_contents('./sql/timely_calender.sql') or die('Error while reading file!');
 	mysqli_multi_query($link, $queries) or die('Database error!');
 	header('Location: index.php?step=4');
 else:

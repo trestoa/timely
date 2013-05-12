@@ -55,7 +55,7 @@ else:
     <div class="control-group">
     	<label class="control-label" for="inputMainUrl">Main Url</label>
         <div class="controls">
-        	<input type="text" id="inputMainUrl" name="config-main.url" placeholder="http://example.tld" required="required">
+        	<input type="text" id="inputMainUrl" name="config-main-url" placeholder="http://example.tld" required="required">
             <p>The main URL if your service. <strong>Without the `/` at the end and with the protocol!!</strong></p>
         </div>
     </div>
