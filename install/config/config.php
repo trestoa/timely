@@ -1,4 +1,5 @@
 <?php
+/* Configuration prototypes for manaual installation */
 //Name of the Service; default: timely :-)
 define('SERVICE_NAME', '');
 //Webpage of the hoster
