@@ -13,11 +13,11 @@ else:
 ?>
 <h2>Step 3 - Create datatables</h2>
 <p>Now we need to create the datatable. timely needs only these 3 table are needed</p>
-<code>
+<pre>
 `timely_user`
 `timely_calender`
 `timely_appointment`
-</code>
+</pre>
 <p>The script can also generate you the table. Just click on `Generate and Next Step`.</p>
 <form action="index.php?step=3" method="post">
 	<button type="submit" name="create_tables" class="btn">Generate and Next Step</button>
