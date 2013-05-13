@@ -3,6 +3,7 @@
 </div>
 <?php
 if(isset($_POST['sql-host']) && isset($_POST['sql-database']) && isset($_POST['sql-username']) && isset($_POST['sql-password'])):
+	mkdir('../config');
 	$file_content =
 		"<?php
 		define('SQL_HOST', '" . $_POST['sql-host'] . "');
