@@ -3,6 +3,7 @@
 </div><?php
 if(isset($_POST['create_tables'])):
 	include('../config/mysql_config.php');
+	exec('mkdir ../config');
 	$link = mysqli_connect(SQL_HOST, SQL_USER, SQL_PASSWORD, SQL_DB) or die("Error, can connect to database!");
 	$queries = file_get_contents('./sql/timely_user.sql') or die('Error while reading file!');
 	$queries .= file_get_contents('./sql/timely_appointment.sql') or die('Error while reading file!');
@@ -20,6 +21,6 @@ else:
 </code>
 <p>The script can also generate you the table. Just click on `Generate and Next Step`.</p>
 <form action="index.php?step=3" method="post">
-	<input type="submit" name="create_tables">Generate and Next Step</form>
+	<button type="submit" name="create_tables">Generate and Next Step</button>
 </form>
 <?php endif; ?>

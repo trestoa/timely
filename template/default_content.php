@@ -100,7 +100,7 @@ Made with <3
         <div class="row-fluid">
             <div class="span4">
                 <div class="content">
-                    <img src="./static/img/manage.png" alt="" class="thumbnail-image">
+                    <img src="<?php echo(MAIN_URL) ?>/static/img/manage.png" alt="" class="thumbnail-image">
                     <div class="caption">
                         <h2>Central Managed</h2>
                         <p>Save your appointments central on the server and access them from everywhere.</p>
@@ -108,7 +108,7 @@ Made with <3
                 </div>
             </div>
             <div class="span4">
-            	<img src="./static/img/simple.png" alt="" class="thumbnail-image">
+            	<img src="<?php echo(MAIN_URL) ?>/static/img/simple.png" alt="" class="thumbnail-image">
                 <div class="content">
                     <div class="caption">
                         <h2>Simple Interface</h2>
@@ -118,7 +118,7 @@ Made with <3
             </div>
             <div class="span4">
                 <div class="content">
-                    <img src="./static/img/dynamic.png" alt="" class="thumbnail-image">
+                    <img src="<?php echo(MAIN_URL) ?>/static/img/dynamic.png" alt="" class="thumbnail-image">
                     <div class="caption">
                         <h2>Fast and Dynamic</h2>
                         <p>Every month is just one click away.</p>
