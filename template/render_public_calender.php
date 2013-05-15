@@ -82,8 +82,8 @@ if($calender_checked == false){
     </ul>
 </div>
 
-<table class="table table-bordered table-condensed">
-<tr>
+<table class="table table-bordered table-condensed calender-table">
+<tr class="calender-table-header-row">
   <th>Sunday</th>
   <th>Monday</th>
   <th>Tuesday</th>

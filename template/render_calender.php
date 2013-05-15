@@ -24,7 +24,7 @@ Made with <3
 ***********************************************************************/
 
 
-if(isset($_GET['month']) && isset($_GET['year'])){
+if((isset($_GET['month']) && isset($_GET['year'])) || isset($_GET['calender_id'])){
 	include('../include.php');
 }
 //if the user is not logged in return error
