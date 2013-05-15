@@ -2,6 +2,9 @@
 ##CHANGES
 + fixed public calender css and rendering bugs
 
+##UPDATING FROM v_1.0
+Just replace the changed files.
+
 ##CHANGED FILES
 		modified:   CHANGES.md
 		modified:   install/step_2.php
